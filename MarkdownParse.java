@@ -18,8 +18,20 @@ public class MarkdownParse {
                 break;
             }
             int closeBracket = markdown.indexOf("]", openBracket);
+            //If there is no more closeBracket in the text, break out of the loop.
+            if (closeBracket == -1){
+                break;
+            }
             int openParen = markdown.indexOf("(", closeBracket);
+            //If there is no more openParen in the text, break out of the loop.
+            if (openParen == -1){
+                break;
+            }
             int closeParen = markdown.indexOf(")", openParen);
+            //If there is no more closeParen in the text, break out of the loop.
+            if (closeParen == -1){
+                break;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
             System.out.println(currentIndex);
