@@ -39,6 +39,12 @@ public class MarkdownParse {
             if (period == -1 || period > closeParen){
                 contSwitch = true;
             }
+            int space = markdown.indexOf(" ", openParen);
+            //If there is a space between the parentheses, set the
+            //contSwtich on.
+            if (space != -1 && space < closeParen){
+                contSwitch = true;
+            }
 
             //IF contSwitch is TRUE, increment currentIndex and
             //skip to the next iteration of the loop.
