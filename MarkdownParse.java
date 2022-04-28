@@ -45,6 +45,13 @@ public class MarkdownParse {
             if (space != -1 && space < closeParen){
                 contSwitch = true;
             }
+            //If there is an exclamation mark directly before openBracket,
+            //set the contSwitch on.
+            if (openBracket > 0){
+                if (markdown.charAt(openBracket-1) == '!'){
+                    contSwitch = true;
+                }
+            }
 
             //IF contSwitch is TRUE, increment currentIndex and
             //skip to the next iteration of the loop.
