@@ -26,4 +26,37 @@ public class MarkdownParseTest extends MarkdownParse{
         expected.add("some-thing.html");
         assertEquals(links, expected);
     }
+
+    @Test
+    public void test2() throws IOException{
+        Path fileName = Path.of("test-file-copy.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("https://something.com");
+        expected.add("some-thing.html");
+        assertEquals(links, expected);
+    }
+
+    @Test
+    public void test3() throws IOException{
+        Path fileName = Path.of("test-file-copy2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("https://something.com");
+        expected.add("https://slither.io");
+        expected.add("https://some-thing.html");
+        assertEquals(links, expected);
+    }
+
+    @Test
+    public void test4() throws IOException{
+        Path fileName = Path.of("test-file-copy3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("https://something.com");
+        assertEquals(links, expected);
+    }
 }
