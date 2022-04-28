@@ -88,4 +88,13 @@ public class MarkdownParseTest extends MarkdownParse{
         ArrayList<String> expected = new ArrayList<String>();
         assertEquals(expected, links);
     }
+
+    @Test
+    public void test8() throws IOException{
+        Path fileName = Path.of("test-file8.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        assertEquals(expected, links);
+    }
 }
