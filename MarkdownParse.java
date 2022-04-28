@@ -24,8 +24,8 @@ public class MarkdownParse {
                 contSwitch = true;
             }
             int openParen = markdown.indexOf("(", closeBracket);
-            //If there is no more openParen in the text, set the contSwitch on.
-            if (openParen == -1){
+            //If there isn't an openParen directly after closeBracket, set contSwitch on.
+            if (openParen == -1 || openParen != closeBracket+1){
                 contSwitch = true;
             }
             int closeParen = markdown.indexOf(")", openParen);
