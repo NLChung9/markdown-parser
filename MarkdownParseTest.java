@@ -86,6 +86,7 @@ public class MarkdownParseTest extends MarkdownParse{
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
         ArrayList<String> expected = new ArrayList<String>();
+        expected.add("Poopopo");
         assertEquals(expected, links);
     }
 }
