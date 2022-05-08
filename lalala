@@ -1,4 +1,4 @@
-if [ $? != 00 ]
+if [ $? -ne 00 ]
 then
   echo "Exit code was not zero"
   exit 1
