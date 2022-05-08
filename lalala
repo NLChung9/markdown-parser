@@ -1,5 +1,8 @@
-let "VAR = 5 + 4"
-let VAR++
-RES=$(( VAR + 3 ))
-(( RES-- ))
-echo $RES
+i=8
+
+until [ $i -lt 3 ]
+do
+  sum=$((sum + i))
+  ((i=i-1))
+done
+echo $sum
